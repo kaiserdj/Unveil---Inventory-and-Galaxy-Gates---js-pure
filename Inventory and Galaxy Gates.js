@@ -4,89 +4,89 @@
 // Port to pure js by ⎛⎝ Kaiserdj™ ⎠⎞ - https://www.elitepvpers.com/forum/members/3409335-kaiserdj.html
 
 (async () => await api.injectCss(`
-#console span
-{
-white-space: pre;
-font-family: monospace;
-width: 720px;
-display: block;
-}
-
-div#header_start_btn
-{
-filter: hue-rotate(201deg) contrast(1.5);
-}
-
-#readButton
-{
-width: 180px;
-height: 38px;
-margin-top: -12px;
-padding-top: 3px;
-font-size: 28px;
-}
-
-@keyframes glow
-{
-  from
-       {
-         text-shadow: 0 0 1px #fff, 0 0 2px #fff, 0 0 3px #e60073, 0 0 4px #e60073, 0 0 5px #e60073, 0 0 6px #e60073, 0 0 7px #e60073;
-       }
-  to
-       {
-         text-shadow: 0 0 2px #fff, 0 0 3px #ff4da6, 0 0 4px #ff4da6, 0 0 5px #ff4da6, 0 0 6px #ff4da6, 0 0 7px #ff4da6, 0 0 8px #ff4da6;
-       }
-}
-
-b.glow
-{
-color: white;
-animation: glow 1s ease-in-out infinite alternate;
-}
-
-div#newEl
-{
-background-color: rgb(217 121 220 / 21%);
-padding: 40px 30px;
-margin: 0px 40px;
-}
-
-div#newEl div
-{
-display: inline-block;
-position: relative;
-}
-
-div#newEl div::before
-{
-content: ""attr(extra)"";
-color: #ffffff;
-right: 0px;
-position: absolute;
-bottom: 0px;
-font-size: 8px;
-line-height: 8px;
-padding-left: 1px;
-letter-spacing: 1px;
-padding-bottom: 1px;
-background-color: #000000;
-filter: contrast(2);
-}
-
-div#newEl > div.upgrade::before
-{
-color: #5cf5f5;
-left: 2px;
-top: 2px;
-right: unset;
-bottom: unset;
-}
-
-div#newEl div p
-{
-width: 30px;
-height: 30px;
-} 
+    #console span
+    {
+    white-space: pre;
+    font-family: monospace;
+    width: 720px;
+    display: block;
+    }
+    
+    div#header_start_btn
+    {
+    filter: hue-rotate(201deg) contrast(1.5);
+    }
+    
+    #readButton
+    {
+    width: 180px;
+    height: 38px;
+    margin-top: -12px;
+    padding-top: 3px;
+    font-size: 28px;
+    }
+    
+    @keyframes glow
+    {
+      from
+           {
+             text-shadow: 0 0 1px #fff, 0 0 2px #fff, 0 0 3px #e60073, 0 0 4px #e60073, 0 0 5px #e60073, 0 0 6px #e60073, 0 0 7px #e60073;
+           }
+      to
+           {
+             text-shadow: 0 0 2px #fff, 0 0 3px #ff4da6, 0 0 4px #ff4da6, 0 0 5px #ff4da6, 0 0 6px #ff4da6, 0 0 7px #ff4da6, 0 0 8px #ff4da6;
+           }
+    }
+    
+    b.glow
+    {
+    color: white;
+    animation: glow 1s ease-in-out infinite alternate;
+    }
+    
+    div#newEl
+    {
+    background-color: rgb(217 121 220 / 21%);
+    padding: 40px 30px;
+    margin: 0px 40px;
+    }
+    
+    div#newEl div
+    {
+    display: inline-block;
+    position: relative;
+    }
+    
+    div#newEl div::before
+    {
+    content: ""attr(extra)"";
+    color: #ffffff;
+    right: 0px;
+    position: absolute;
+    bottom: 0px;
+    font-size: 8px;
+    line-height: 8px;
+    padding-left: 1px;
+    letter-spacing: 1px;
+    padding-bottom: 1px;
+    background-color: #000000;
+    filter: contrast(2);
+    }
+    
+    div#newEl > div.upgrade::before
+    {
+    color: #5cf5f5;
+    left: 2px;
+    top: 2px;
+    right: unset;
+    bottom: unset;
+    }
+    
+    div#newEl div p
+    {
+    width: 30px;
+    height: 30px;
+    } 
 `))();
 
 //function credits: stackoverflow@Salman A | https://stackoverflow.com/users/87015
@@ -112,13 +112,14 @@ function nFormatter(num, digits) {
 }
 
 //if login section exist...
-if(DDNA && DDNA.context && DDNA.context['userID'] && DDNA.context['sessionID']) console.log("ok...")
+if (DDNA && DDNA.context && DDNA.context['userID'] && DDNA.context['sessionID']) console.log("ok...")
 else alert('error.DDNA');
 document.getElementById('header_main_middle')
-    .insertAdjacentHTML('beforeend',`
-<div id="header_start_btn">
-<div id="readButton">READ</div>
-</div>`)
+    .insertAdjacentHTML('beforeend', `
+        <div id="header_start_btn">
+            <div id="readButton">READ</div>
+        </div>
+    `)
 
 function readAccount() {
     document.getElementsByClassName('infoContainerHeadline')[0].innerHTML = 'Script by: <b class="glow">ilya</b>'
@@ -131,7 +132,7 @@ function readAccount() {
         "mode": "no-cors"
     }).then(function(response) {
         let urlExample = response.url
-        if(urlExample.includes('loginError') == true && response.redirected == true) {
+        if (urlExample.includes('loginError') == true && response.redirected == true) {
             console.log('Login failed...')
         } else return response.text()
     }).then(function(data) {
@@ -162,7 +163,7 @@ function readAccount() {
             let maxWave = gate["@totalWave"]
             let lifes = gate["@livesLeft"]
             let text = names[id] + ": Has " + parts + "/" + maxParts + " parts"
-            if(inMap != 0) {
+            if (inMap != 0) {
                 text += ", plus one at map with " + lifes + "x Lifes."
             }
             textToConsole += (text + '\n')
@@ -179,7 +180,7 @@ function readAccount() {
             "method": "POST"
         }).then(function(response) {
             let urlExample = response.url
-            if(urlExample.includes('loginError') == true && response.redirected == true) {
+            if (urlExample.includes('loginError') == true && response.redirected == true) {
                 console.log('Failed 2...')
             } else return response.text()
         }).then(function(data) {
@@ -189,7 +190,7 @@ function readAccount() {
             let mainHangar = 0;
             Object.keys(hangars).forEach(function(key) {
                 let hangar = hangars[key]
-                if(hangar.hangar_is_active) mainHangar = hangar
+                if (hangar.hangar_is_active) mainHangar = hangar
             });
             let hangarID = mainHangar.hangarID
             //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -206,14 +207,14 @@ function readAccount() {
             }).then(function(data3) {
                 let base64encoded3 = data3
                 let obj3 = JSON.parse(atob(base64encoded3))
-                console.log('obj3',obj3)
+                console.log('obj3', obj3)
                 let layout = document.getElementById('newEl')
                 let itemLootIds = obj3.data.map.lootIds
                 let itemTypes = obj3.data.map.types
                 let stylesText = ''
                 itemLootIds.forEach((item, index) => {
                     //hotfix 'I-Chron'
-                    if(item == 'resource_collectable_isochronate') item = 'resource_blueprint_isochronate'
+                    if (item == 'resource_collectable_isochronate') item = 'resource_blueprint_isochronate'
                     stylesText += `p.item` + index + ` {
 background-image: url(https://darkorbit-22.bpsecure.com/do_img/global/items/` + (item.replace(/_/g, "/")) + `_30x30.png);
 }
@@ -243,19 +244,17 @@ background-image: url(https://darkorbit-22.bpsecure.com/do_img/global/items/` + 
                 listItems.forEach(item => {
                     let elem = ''
                     let para = '<p class="item' + item.L + '" width="30" height="30" title="' + itemInfo[item.L].name + '">'
-                    if(item.DL || item.SL || item.LT) {
+                    if (item.DL || item.SL || item.LT) {
                         let extra
-                        item.DL ? extra = item.DL : item.SL ? extra = item.SL : extra = item.LV +1
+                        item.DL ? extra = item.DL : item.SL ? extra = item.SL : extra = item.LV + 1
                         elem += '<div class="upgrade" extra="' + extra + '">' + para + '</div>'
-                    }
-                    else if(item.Q || item.CH) {
+                    } else if (item.Q || item.CH) {
                         let extra
                         item.Q ? extra = nFormatter(item.Q, 0) : extra = item.CH.split(': ')[1]
                         elem += '<div extra="' + extra + '">' + para + '</div>'
-                    }
-                    else elem += '<div>' + para + '</div>'
+                    } else elem += '<div>' + para + '</div>'
                     //hr divide by type
-                    if(lastType != item.T) {
+                    if (lastType != item.T) {
                         elem = '<hr>' + elem
                     }
                     lastType = item.T
@@ -291,156 +290,156 @@ Web:     http://goessner.net/
 function parseXml(xml) {
     var dom = null;
     if (window.DOMParser) {
-    try {
-        dom = (new DOMParser()).parseFromString(xml, "text/xml");
-    } catch (e) { dom = null; }
+        try {
+            dom = (new DOMParser()).parseFromString(xml, "text/xml");
+        } catch (e) { dom = null; }
     } else if (window.ActiveXObject) {
-    try {
-        dom = new ActiveXObject('Microsoft.XMLDOM');
-        dom.async = false;
-        if (!dom.loadXML(xml)) // parse error ..
-    
-            window.alert(dom.parseError.reason + dom.parseError.srcText);
-    } catch (e) { dom = null; }
+        try {
+            dom = new ActiveXObject('Microsoft.XMLDOM');
+            dom.async = false;
+            if (!dom.loadXML(xml)) // parse error ..
+
+                window.alert(dom.parseError.reason + dom.parseError.srcText);
+        } catch (e) { dom = null; }
     } else
-    alert("cannot parse xml string!");
+        alert("cannot parse xml string!");
     return dom;
-    }
-    
-    function xml2json(xml, tab) {
+}
+
+function xml2json(xml, tab) {
     var X = {
-    toObj: function(xml) {
-        var o = {};
-        if (xml.nodeType == 1) { // element node ..
-            if (xml.attributes.length) // element with attributes  ..
-                for (var i = 0; i < xml.attributes.length; i++)
-                    o["@" + xml.attributes[i].nodeName] = (xml.attributes[i].nodeValue || "").toString();
-            if (xml.firstChild) { // element has child nodes ..
-                var textChild = 0,
-                    cdataChild = 0,
-                    hasElementChild = false;
-                for (var n = xml.firstChild; n; n = n.nextSibling) {
-                    if (n.nodeType == 1) hasElementChild = true;
-                    else if (n.nodeType == 3 && n.nodeValue.match(/[^ \f\n\r\t\v]/)) textChild++; // non-whitespace text
-                    else if (n.nodeType == 4) cdataChild++; // cdata section node
-                }
-                if (hasElementChild) {
-                    if (textChild < 2 && cdataChild < 2) { // structured element with evtl. a single text or/and cdata node ..
-                        X.removeWhite(xml);
-                        for (var n = xml.firstChild; n; n = n.nextSibling) {
-                            if (n.nodeType == 3) // text node
-                                o["#text"] = X.escape(n.nodeValue);
-                            else if (n.nodeType == 4) // cdata node
-                                o["#cdata"] = X.escape(n.nodeValue);
-                            else if (o[n.nodeName]) { // multiple occurence of element ..
-                                if (o[n.nodeName] instanceof Array)
-                                    o[n.nodeName][o[n.nodeName].length] = X.toObj(n);
-                                else
-                                    o[n.nodeName] = [o[n.nodeName], X.toObj(n)];
-                            } else // first occurence of element..
-                                o[n.nodeName] = X.toObj(n);
+        toObj: function(xml) {
+            var o = {};
+            if (xml.nodeType == 1) { // element node ..
+                if (xml.attributes.length) // element with attributes  ..
+                    for (var i = 0; i < xml.attributes.length; i++)
+                        o["@" + xml.attributes[i].nodeName] = (xml.attributes[i].nodeValue || "").toString();
+                if (xml.firstChild) { // element has child nodes ..
+                    var textChild = 0,
+                        cdataChild = 0,
+                        hasElementChild = false;
+                    for (var n = xml.firstChild; n; n = n.nextSibling) {
+                        if (n.nodeType == 1) hasElementChild = true;
+                        else if (n.nodeType == 3 && n.nodeValue.match(/[^ \f\n\r\t\v]/)) textChild++; // non-whitespace text
+                        else if (n.nodeType == 4) cdataChild++; // cdata section node
+                    }
+                    if (hasElementChild) {
+                        if (textChild < 2 && cdataChild < 2) { // structured element with evtl. a single text or/and cdata node ..
+                            X.removeWhite(xml);
+                            for (var n = xml.firstChild; n; n = n.nextSibling) {
+                                if (n.nodeType == 3) // text node
+                                    o["#text"] = X.escape(n.nodeValue);
+                                else if (n.nodeType == 4) // cdata node
+                                    o["#cdata"] = X.escape(n.nodeValue);
+                                else if (o[n.nodeName]) { // multiple occurence of element ..
+                                    if (o[n.nodeName] instanceof Array)
+                                        o[n.nodeName][o[n.nodeName].length] = X.toObj(n);
+                                    else
+                                        o[n.nodeName] = [o[n.nodeName], X.toObj(n)];
+                                } else // first occurence of element..
+                                    o[n.nodeName] = X.toObj(n);
+                            }
+                        } else { // mixed content
+                            if (!xml.attributes.length)
+                                o = X.escape(X.innerXml(xml));
+                            else
+                                o["#text"] = X.escape(X.innerXml(xml));
                         }
-                    } else { // mixed content
+                    } else if (textChild) { // pure text
                         if (!xml.attributes.length)
                             o = X.escape(X.innerXml(xml));
                         else
                             o["#text"] = X.escape(X.innerXml(xml));
+                    } else if (cdataChild) { // cdata
+                        if (cdataChild > 1)
+                            o = X.escape(X.innerXml(xml));
+                        else
+                            for (var n = xml.firstChild; n; n = n.nextSibling)
+                                o["#cdata"] = X.escape(n.nodeValue);
                     }
-                } else if (textChild) { // pure text
-                    if (!xml.attributes.length)
-                        o = X.escape(X.innerXml(xml));
-                    else
-                        o["#text"] = X.escape(X.innerXml(xml));
-                } else if (cdataChild) { // cdata
-                    if (cdataChild > 1)
-                        o = X.escape(X.innerXml(xml));
-                    else
-                        for (var n = xml.firstChild; n; n = n.nextSibling)
-                            o["#cdata"] = X.escape(n.nodeValue);
                 }
+                if (!xml.attributes.length && !xml.firstChild) o = null;
+            } else if (xml.nodeType == 9) { // document.node
+                o = X.toObj(xml.documentElement);
+            } else
+                alert("unhandled node type: " + xml.nodeType);
+            return o;
+        },
+        toJson: function(o, name, ind) {
+            var json = name ? ("\"" + name + "\"") : "";
+            if (o instanceof Array) {
+                for (var i = 0, n = o.length; i < n; i++)
+                    o[i] = X.toJson(o[i], "", ind + "\t");
+                json += (name ? ":[" : "[") + (o.length > 1 ? ("\n" + ind + "\t" + o.join(",\n" + ind + "\t") + "\n" + ind) : o.join("")) + "]";
+            } else if (o == null)
+                json += (name && ":") + "null";
+            else if (typeof(o) == "object") {
+                var arr = [];
+                for (var m in o)
+                    arr[arr.length] = X.toJson(o[m], m, ind + "\t");
+                json += (name ? ":{" : "{") + (arr.length > 1 ? ("\n" + ind + "\t" + arr.join(",\n" + ind + "\t") + "\n" + ind) : arr.join("")) + "}";
+            } else if (typeof(o) == "string")
+                json += (name && ":") + "\"" + o.toString() + "\"";
+            else
+                json += (name && ":") + o.toString();
+            return json;
+        },
+        innerXml: function(node) {
+            var s = ""
+            if ("innerHTML" in node)
+                s = node.innerHTML;
+            else {
+                var asXml = function(n) {
+                    var s = "";
+                    if (n.nodeType == 1) {
+                        s += "<" + n.nodeName;
+                        for (var i = 0; i < n.attributes.length; i++)
+                            s += " " + n.attributes[i].nodeName + "=\"" + (n.attributes[i].nodeValue || "").toString() + "\"";
+                        if (n.firstChild) {
+                            s += ">";
+                            for (var c = n.firstChild; c; c = c.nextSibling)
+                                s += asXml(c);
+                            s += "</" + n.nodeName + ">";
+                        } else
+                            s += "/>";
+                    } else if (n.nodeType == 3)
+                        s += n.nodeValue;
+                    else if (n.nodeType == 4)
+                        s += "<![CDATA[" + n.nodeValue + "]]>";
+                    return s;
+                };
+                for (var c = node.firstChild; c; c = c.nextSibling)
+                    s += asXml(c);
             }
-            if (!xml.attributes.length && !xml.firstChild) o = null;
-        } else if (xml.nodeType == 9) { // document.node
-            o = X.toObj(xml.documentElement);
-        } else
-            alert("unhandled node type: " + xml.nodeType);
-        return o;
-    },
-    toJson: function(o, name, ind) {
-        var json = name ? ("\"" + name + "\"") : "";
-        if (o instanceof Array) {
-            for (var i = 0, n = o.length; i < n; i++)
-                o[i] = X.toJson(o[i], "", ind + "\t");
-            json += (name ? ":[" : "[") + (o.length > 1 ? ("\n" + ind + "\t" + o.join(",\n" + ind + "\t") + "\n" + ind) : o.join("")) + "]";
-        } else if (o == null)
-            json += (name && ":") + "null";
-        else if (typeof(o) == "object") {
-            var arr = [];
-            for (var m in o)
-                arr[arr.length] = X.toJson(o[m], m, ind + "\t");
-            json += (name ? ":{" : "{") + (arr.length > 1 ? ("\n" + ind + "\t" + arr.join(",\n" + ind + "\t") + "\n" + ind) : arr.join("")) + "}";
-        } else if (typeof(o) == "string")
-            json += (name && ":") + "\"" + o.toString() + "\"";
-        else
-            json += (name && ":") + o.toString();
-        return json;
-    },
-    innerXml: function(node) {
-        var s = ""
-        if ("innerHTML" in node)
-            s = node.innerHTML;
-        else {
-            var asXml = function(n) {
-                var s = "";
-                if (n.nodeType == 1) {
-                    s += "<" + n.nodeName;
-                    for (var i = 0; i < n.attributes.length; i++)
-                        s += " " + n.attributes[i].nodeName + "=\"" + (n.attributes[i].nodeValue || "").toString() + "\"";
-                    if (n.firstChild) {
-                        s += ">";
-                        for (var c = n.firstChild; c; c = c.nextSibling)
-                            s += asXml(c);
-                        s += "</" + n.nodeName + ">";
+            return s;
+        },
+        escape: function(txt) {
+            return txt.replace(/[\\]/g, "\\\\")
+                .replace(/[\"]/g, '\\"')
+                .replace(/[\n]/g, '\\n')
+                .replace(/[\r]/g, '\\r');
+        },
+        removeWhite: function(e) {
+            e.normalize();
+            for (var n = e.firstChild; n;) {
+                if (n.nodeType == 3) { // text node
+                    if (!n.nodeValue.match(/[^ \f\n\r\t\v]/)) { // pure whitespace text node
+                        var nxt = n.nextSibling;
+                        e.removeChild(n);
+                        n = nxt;
                     } else
-                        s += "/>";
-                } else if (n.nodeType == 3)
-                    s += n.nodeValue;
-                else if (n.nodeType == 4)
-                    s += "<![CDATA[" + n.nodeValue + "]]>";
-                return s;
-            };
-            for (var c = node.firstChild; c; c = c.nextSibling)
-                s += asXml(c);
-        }
-        return s;
-    },
-    escape: function(txt) {
-        return txt.replace(/[\\]/g, "\\\\")
-            .replace(/[\"]/g, '\\"')
-            .replace(/[\n]/g, '\\n')
-            .replace(/[\r]/g, '\\r');
-    },
-    removeWhite: function(e) {
-        e.normalize();
-        for (var n = e.firstChild; n;) {
-            if (n.nodeType == 3) { // text node
-                if (!n.nodeValue.match(/[^ \f\n\r\t\v]/)) { // pure whitespace text node
-                    var nxt = n.nextSibling;
-                    e.removeChild(n);
-                    n = nxt;
-                } else
+                        n = n.nextSibling;
+                } else if (n.nodeType == 1) { // element node
+                    X.removeWhite(n);
                     n = n.nextSibling;
-            } else if (n.nodeType == 1) { // element node
-                X.removeWhite(n);
-                n = n.nextSibling;
-            } else // any other node
-                n = n.nextSibling;
+                } else // any other node
+                    n = n.nextSibling;
+            }
+            return e;
         }
-        return e;
-    }
     };
     if (xml.nodeType == 9) // document node
-    xml = xml.documentElement;
+        xml = xml.documentElement;
     var json = X.toJson(X.toObj(X.removeWhite(xml)), xml.nodeName, "\t");
     return "{\n" + tab + (tab ? json.replace(/\t/g, tab) : json.replace(/\t|\n/g, "")) + "\n}";
-    }
+}

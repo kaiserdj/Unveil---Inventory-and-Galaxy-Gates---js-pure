@@ -1,13 +1,8 @@
-// ==UserScript==
-// @name         Unveil - Inventory and Galaxy Gates
-// @namespace    https://www.elitepvpers.com/forum/members/7814556-hordes-io.html
-// @version      1.0.2
-// @description  Shows Inventory and Galaxy Gates wich would be an 'app-only' feature
-// @author       ilya / HORDES.IO@epvp
-// @include      *.darkorbit.com/indexInternal.es?action=internalStart*
-// @grant        GM_addStyle
-// @require      https://cdnjs.cloudflare.com/ajax/libs/x2js/1.1.5/xml2json.min.js
-// ==/UserScript==
+// All credits to HORDES.IO - https://www.elitepvpers.com/forum/members/7814556-hordes-io.html
+// Url - https://www.elitepvpers.com/forum/darkorbit/4869026-script-unveil-check-inventory-galaxy-gates-browser.html
+//
+// Port to pure js by ⎛⎝ Kaiserdj™ ⎠⎞ - https://www.elitepvpers.com/forum/members/3409335-kaiserdj.html
+
 GM_addStyle ( `
 #console span {
 white-space: pre;

@@ -24,4 +24,9 @@ Userscript port https://www.elitepvpers.com/forum/darkorbit/4869026-script-unvei
 https://raw.githubusercontent.com/kaiserdj/Unveil-Inventory-and-Galaxy-Gates-js-pure/main/Inventory%20and%20Galaxy%20Gates.js
 ``` 
 
+
+https://user-images.githubusercontent.com/5487950/124521818-34587000-ddf1-11eb-859f-57c74777b276.mp4
+
+
+
 All credits to HORDES.IO - https://www.elitepvpers.com/forum/members/7814556-hordes-io.html

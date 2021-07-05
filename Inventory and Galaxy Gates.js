@@ -3,45 +3,62 @@
 //
 // Port to pure js by ⎛⎝ Kaiserdj™ ⎠⎞ - https://www.elitepvpers.com/forum/members/3409335-kaiserdj.html
 
-GM_addStyle ( `
-#console span {
+(async () => await api.injectCss(`
+#console span
+{
 white-space: pre;
 font-family: monospace;
 width: 720px;
 display: block;
 }
-div#header_start_btn {
+
+div#header_start_btn
+{
 filter: hue-rotate(201deg) contrast(1.5);
 }
-#readButton {
+
+#readButton
+{
 width: 180px;
 height: 38px;
 margin-top: -12px;
 padding-top: 3px;
 font-size: 28px;
 }
-@keyframes glow {
-from {
-text-shadow: 0 0 1px #fff, 0 0 2px #fff, 0 0 3px #e60073, 0 0 4px #e60073, 0 0 5px #e60073, 0 0 6px #e60073, 0 0 7px #e60073;
+
+@keyframes glow
+{
+  from
+       {
+         text-shadow: 0 0 1px #fff, 0 0 2px #fff, 0 0 3px #e60073, 0 0 4px #e60073, 0 0 5px #e60073, 0 0 6px #e60073, 0 0 7px #e60073;
+       }
+  to
+       {
+         text-shadow: 0 0 2px #fff, 0 0 3px #ff4da6, 0 0 4px #ff4da6, 0 0 5px #ff4da6, 0 0 6px #ff4da6, 0 0 7px #ff4da6, 0 0 8px #ff4da6;
+       }
 }
-to {
-text-shadow: 0 0 2px #fff, 0 0 3px #ff4da6, 0 0 4px #ff4da6, 0 0 5px #ff4da6, 0 0 6px #ff4da6, 0 0 7px #ff4da6, 0 0 8px #ff4da6;
-}
-}
-b.glow {
+
+b.glow
+{
 color: white;
 animation: glow 1s ease-in-out infinite alternate;
 }
-div#newEl {
+
+div#newEl
+{
 background-color: rgb(217 121 220 / 21%);
 padding: 40px 30px;
 margin: 0px 40px;
 }
-div#newEl div {
+
+div#newEl div
+{
 display: inline-block;
 position: relative;
 }
-div#newEl div::before {
+
+div#newEl div::before
+{
 content: ""attr(extra)"";
 color: #ffffff;
 right: 0px;
@@ -55,17 +72,22 @@ padding-bottom: 1px;
 background-color: #000000;
 filter: contrast(2);
 }
-div#newEl > div.upgrade::before {
+
+div#newEl > div.upgrade::before
+{
 color: #5cf5f5;
 left: 2px;
 top: 2px;
 right: unset;
 bottom: unset;
 }
-div#newEl div p {
+
+div#newEl div p
+{
 width: 30px;
 height: 30px;
-}` );
+} 
+`))();
 
 //function credits: github@Abdulla Abdurakhmanov | https://github.com/abdolence
 //source: https://github.com/abdolence/x2js/blob/master/xml2json.min.js
